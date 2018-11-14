@@ -1,25 +1,63 @@
 import React from 'react';
-import { StyleSheet, Text, View, KeyboardAvoidingView } from 'react-native';
-import LoginForm from './LoginForm';
+import { StyleSheet, Text, View, KeyboardAvoidingView,TextInput,TouchableOpacity } from 'react-native';
+
+
+
 
 export default class Login extends React.Component {
+    constructor(props){
+        super(props)
+    }
   render() {
+    const { navigate } = this.props.navigation;
     return (
-    
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
             <View style={styles.loginContainer}>
                 {/* <Image resizeMode="contain" style={styles.logo} source={require('../../components/images/logo-dark-bg.png')} /> */}
             </View>
 
             <View style={styles.formContainer}>
-                   <LoginForm/>
+                   {/* <LoginForm nav={this.props.navigation}/>
+                   <NavigatePoint/> */}
+                   <TextInput style = {styles.input} 
+                    autoCapitalize="none" 
+                    onSubmitEditing={() => this.passwordInput.focus()} 
+                    autoCorrect={false} 
+                    keyboardType='email-address' 
+                    returnKeyType="next" 
+                    placeholder='Email or Mobile Num' 
+                    placeholderTextColor='rgba(225,225,225,0.7)'/>
+
+                        <TextInput style = {styles.input}   
+                            returnKeyType="go" 
+                            ref={(input)=> this.passwordInput = input} 
+                            placeholder='Password' 
+                            placeholderTextColor='rgba(225,225,225,0.7)' 
+                            secureTextEntry
+                        />
+
+                        <TouchableOpacity style={styles.buttonContainer}>
+                            <Text style={styles.buttonText}>LOGIN</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.buttonContainer} >
+                            <Text style={styles.buttonText} onPress={() => navigate('Register')}>Create a New Account</Text>
+                        </TouchableOpacity> 
+
+                        {/* <TouchableOpacity style={styles.buttonContainer} >
+                            <Text style={styles.buttonText} onPress={() => navigate('Donator')}>Create a New Account</Text>
+                        </TouchableOpacity>  */}
+
+                        <Text>ForGet Your Password?</Text>
             </View>
-            
+
       </KeyboardAvoidingView>
     
     );
   }
 }
+
+
 
 const styles = StyleSheet.create({
     container: {
@@ -35,5 +73,23 @@ const styles = StyleSheet.create({
         position: 'absolute',
         width: 300,
         height: 100
+    },
+
+    input:{
+        height: 40,
+        backgroundColor: 'rgba(225,225,225,0.2)',
+        marginBottom: 10,
+        padding: 10,
+        color: '#fff'
+    },
+    buttonContainer:{
+        backgroundColor: '#2980b6',
+        paddingVertical: 15,
+        marginBottom:15
+    },
+    buttonText:{
+        color: '#fff',
+        textAlign: 'center',
+        fontWeight: '700'
     }
 });

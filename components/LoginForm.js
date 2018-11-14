@@ -2,8 +2,14 @@ import React from 'react';
 import { View, Text, TextInput, TouchableOpacity,StyleSheet} from 'react-native';
 
 export default class LoginForm extends React.Component {
+    constructor(props){
+        super(props)
+    }
+
     render() {
-      return (
+        
+      
+        return (
         <View style={styles.container}>
               <TextInput style = {styles.input} 
                autoCapitalize="none" 
@@ -22,12 +28,16 @@ export default class LoginForm extends React.Component {
                     secureTextEntry
                 />
 
-                <TouchableOpacity style={styles.buttonContainer} >
+                <TouchableOpacity style={styles.buttonContainer}>
                     <Text style={styles.buttonText}>LOGIN</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.buttonContainer} >
-                    <Text  style={styles.buttonText}>Create a New Account</Text>
+                    <Text style={styles.buttonText} onPress={() => this.props.nav.navigate('Register')}>Create a New Account</Text>
+                </TouchableOpacity> 
+
+                <TouchableOpacity style={styles.buttonContainer} >
+                    <Text style={styles.buttonText} onPress={() => this.props.nav.navigate('Donator')}>Create a New Account</Text>
                 </TouchableOpacity> 
 
                 <Text>ForGet Your Password?</Text>
@@ -35,6 +45,7 @@ export default class LoginForm extends React.Component {
       );
     }
   }
+
   
   const styles = StyleSheet.create({
     container: {
