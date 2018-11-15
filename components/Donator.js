@@ -49,6 +49,9 @@ export default class Donator extends React.Component {
 
                 <Button
                     title="Submit"
+                    onPress={() => {
+                        Alert.alert('You tapped the button!');
+                    }}
                 />
             </View>
             

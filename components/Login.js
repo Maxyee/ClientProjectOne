@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, KeyboardAvoidingView,TextInput,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, KeyboardAvoidingView,TextInput,TouchableOpacity,Image } from 'react-native';
 
 
 
@@ -13,12 +13,10 @@ export default class Login extends React.Component {
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
             <View style={styles.loginContainer}>
-                {/* <Image resizeMode="contain" style={styles.logo} source={require('../../components/images/logo-dark-bg.png')} /> */}
+                <Image resizeMode="contain" style={styles.logo} source={require('./images/donation.jpg')} />
             </View>
 
             <View style={styles.formContainer}>
-                   {/* <LoginForm nav={this.props.navigation}/>
-                   <NavigatePoint/> */}
                    <TextInput style = {styles.input} 
                     autoCapitalize="none" 
                     onSubmitEditing={() => this.passwordInput.focus()} 
@@ -44,9 +42,13 @@ export default class Login extends React.Component {
                             <Text style={styles.buttonText} onPress={() => navigate('Register')}>Create a New Account</Text>
                         </TouchableOpacity> 
 
-                        {/* <TouchableOpacity style={styles.buttonContainer} >
-                            <Text style={styles.buttonText} onPress={() => navigate('Donator')}>Create a New Account</Text>
-                        </TouchableOpacity>  */}
+                        <TouchableOpacity style={styles.buttonContainer} >
+                            <Text style={styles.buttonText} onPress={() => navigate('Donatorprofile')}>Donator Profile</Text>
+                        </TouchableOpacity> 
+
+                        <TouchableOpacity style={styles.buttonContainer} >
+                            <Text style={styles.buttonText} onPress={() => navigate('Doneeprofile')}>Donee Profile</Text>
+                        </TouchableOpacity> 
 
                         <Text>ForGet Your Password?</Text>
             </View>

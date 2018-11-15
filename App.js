@@ -6,6 +6,8 @@ import Register from './components/Register';
 import Donator from './components/Donator';
 import Donee from './components/Donee';
 import LoginForm from './components/LoginForm';
+import Donatorprofile from './components/Donatorprofile';
+import Doneeprofile from './components/Doneeprofile';
 
 export default class App extends React.Component {
   render() {
@@ -39,6 +41,14 @@ const AppStackNavigator = createStackNavigator(
 
     LoginForm:{
       screen:LoginForm
+    },
+
+    Donatorprofile:{
+      screen:Donatorprofile
+    },
+
+    Doneeprofile:{
+      screen:Doneeprofile
     }
   },
   {

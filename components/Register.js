@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, KeyboardAvoidingView,TouchableOpacity,TextInput } from 'react-native';
+import { StyleSheet, Text, View, KeyboardAvoidingView,TouchableOpacity,TextInput,Image } from 'react-native';
 
 
 export default class Login extends React.Component {
@@ -12,7 +12,7 @@ export default class Login extends React.Component {
     
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
             <View style={styles.loginContainer}>
-                {/* <Image resizeMode="contain" style={styles.logo} source={require('../../components/images/logo-dark-bg.png')} /> */}
+                <Image resizeMode="contain" style={styles.logo} source={require('./images/donation.jpg')} />
             </View>
 
             <View style={styles.formContainer}>
